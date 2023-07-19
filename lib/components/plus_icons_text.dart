@@ -8,14 +8,16 @@ class PlusIconsText extends StatelessWidget {
   const PlusIconsText({
     super.key,
     required this.text,
+    this.onTap,
   });
   final String text;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const PlusIcons(),
+        PlusIcons(onTap: onTap),
         AppSizes.weight7,
         Text(text, style: AppTextStyles.textStyle),
       ],

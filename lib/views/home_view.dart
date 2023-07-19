@@ -19,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.white,
         body: Column(
           children: [
             Stack(
@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
                       InkWell(
                         onTap: () {},
                         child: SvgPicture.asset(
-                          'assets/images/Vector.svg',
+                          'assets/images/setting.svg',
                         ),
                       ),
                     ],
@@ -49,7 +49,8 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ],
             ),
-            const PlusIconsText(
+            PlusIconsText(
+              onTap: () => Navigator.pushNamed(context, 'foodView'),
               text: AppTexts.food,
             ),
             AppSizes.height10,
@@ -74,13 +75,31 @@ class _HomeViewState extends State<HomeView> {
             const PlusIconsText(
               text: AppTexts.fellingWell,
             ),
-            Stack(
+            Row(
               children: [
-                SvgPicture.asset(
-                  'assets/images/GIRL.svg',
+                Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: SvgPicture.asset(
+                        'assets/images/GIRL.svg',
+                      ),
+                    ),
+                    Positioned(
+                      child: SvgPicture.asset('assets/images/Group.svg'),
+                    ),
+                    Positioned(
+                      top: 170,
+                      child: SvgPicture.asset(
+                        'assets/images/Group5.svg',
+                      ),
+                    ),
+                  ],
                 ),
-                SvgPicture.asset(
-                  'assets/images/Vector(1).svg',
+                Expanded(
+                  child: SvgPicture.asset(
+                    'assets/images/Group80.svg',
+                  ),
                 ),
               ],
             ),

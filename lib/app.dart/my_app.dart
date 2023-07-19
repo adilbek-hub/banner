@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foods/views/food_view.dart';
 import 'package:foods/views/home_view.dart';
 
 class MyApp extends StatelessWidget {
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeView(),
+      routes: {
+        '/': (context) => const HomeView(),
+        'foodView': (context) => const FoodView(),
+      },
     );
   }
 }
