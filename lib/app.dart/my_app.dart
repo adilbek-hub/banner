@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foods/models/time_foods.dart';
 import 'package:foods/views/food_view.dart';
 import 'package:foods/views/home_view.dart';
 
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const HomeView(),
-        'foodView': (context) => const FoodView(),
+        'foodView': (context) => FoodView(
+              timeFoodsList: timeFoodsList,
+            ),
       },
     );
   }

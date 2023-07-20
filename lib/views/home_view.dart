@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:foods/components/app_sizes.dart';
 import 'package:foods/components/bottom_wave_clipper.dart';
-import 'package:foods/components/plus_icons.dart';
+
 import 'package:foods/components/plus_icons_text.dart';
-import 'package:foods/constants/app_text_styles.dart';
+import 'package:foods/constants/app_sizes.dart';
+
 import 'package:foods/constants/app_texts.dart';
 
 class HomeView extends StatefulWidget {
