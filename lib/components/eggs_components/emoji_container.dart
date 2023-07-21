@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foods/constants/app_colors.dart';
-import 'package:foods/views/emoji_view.dart';
 
 class EmojiContainer extends StatelessWidget {
   const EmojiContainer({
