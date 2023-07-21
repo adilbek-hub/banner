@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:foods/constants/app_colors.dart';
 import 'package:foods/views/emoji_view.dart';
 
-class PickOnContainer extends StatelessWidget {
-  const PickOnContainer({
+class EmojiContainer extends StatelessWidget {
+  const EmojiContainer({
     super.key,
   });
 
@@ -21,30 +21,12 @@ class PickOnContainer extends StatelessWidget {
             end: Alignment.centerRight,
           ),
         ),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              'time',
+            Text(
+              'emoji',
               style: TextStyle(color: AppColors.blue, fontSize: 18),
-            ),
-            const Text(
-              'dish name',
-              style: TextStyle(color: AppColors.blue, fontSize: 18),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const EmojiView(),
-                  ),
-                );
-              },
-              child: const Text(
-                'emoji',
-                style: TextStyle(color: AppColors.blue, fontSize: 18),
-              ),
             ),
           ],
         ),

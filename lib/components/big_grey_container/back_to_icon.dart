@@ -8,12 +8,17 @@ class BackToIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topLeft,
-      child: Padding(
-        padding: const EdgeInsets.only(top: 15, left: 20),
-        child: SvgPicture.asset(
-          'assets/images/BackTo.svg',
+    return InkWell(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 15, left: 20),
+          child: SvgPicture.asset(
+            'assets/images/BackTo.svg',
+          ),
         ),
       ),
     );
