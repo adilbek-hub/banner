@@ -11,7 +11,6 @@ class BackToIconInEmoji extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.pushNamed(context, 'foodView');
-        print('OnTab');
       },
       child: Align(
         alignment: Alignment.topLeft,

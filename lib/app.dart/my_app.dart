@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foods/models/time_foods.dart';
 import 'package:foods/views/food_view.dart';
 import 'package:foods/views/home_view.dart';
+import 'package:foods/views/recipes_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         'foodView': (context) => FoodView(
               timeFoodsList: timeFoodsList,
             ),
+        'recipesView': (context) => const RecipesView(),
       },
     );
   }

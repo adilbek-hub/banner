@@ -1,6 +1,3 @@
-import 'dart:async';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,16 +12,6 @@ class CenterContainer extends StatelessWidget {
   });
 
   final List<TimeFoods> emogiList;
-  void toPage(context) {
-    if (emogiList[0].foodImage == emogiList[0].foodImage) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => EggsView(),
-        ),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
