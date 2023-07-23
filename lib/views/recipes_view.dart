@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foods/components/plus_icons.dart';
@@ -15,14 +17,21 @@ class RecipesView extends StatelessWidget {
             Expanded(
               child: Stack(
                 children: [
-                  Positioned(
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      color: const Color(0xffc2c4d8).withOpacity(0.9),
+                  Center(
+                    child: SizedBox(
+                      width: double.infinity,
                       child: SvgPicture.asset(
                         'assets/images/object_board.svg',
+                        fit: BoxFit.cover,
                       ),
+                    ),
+                  ),
+                  //container
+                  Center(
+                    child: Container(
+                      color: Colors.white.withOpacity(0.4),
+                      width: double.infinity,
+                      height: 480,
                     ),
                   ),
                   //container
@@ -109,13 +118,6 @@ class RecipesView extends StatelessWidget {
                     ),
                   ),
 
-                  // Positioned(
-                  //   left: 0,
-                  //   top: 340,
-                  //   child: SvgPicture.asset(
-                  //     'assets/images/Spoon.svg',
-                  //   ),
-                  // ),
                   // New container
                   Positioned(
                     top: 155,
@@ -188,13 +190,29 @@ class RecipesView extends StatelessWidget {
                   ),
 
                   Positioned(
-                      bottom: 0,
-                      left: 0,
-                      child: SvgPicture.asset('assets/images/Group5.svg')),
-                  Positioned(
-                      bottom: -20,
-                      right: 70,
-                      child: SvgPicture.asset('assets/images/Plug.svg')),
+                    bottom: 0,
+                    left: 33,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width - 65,
+                      height: MediaQuery.of(context).size.height - 610,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0xff374B93)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.only(top: 15, left: 20),
+                        child: Text(
+                          'Directions',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

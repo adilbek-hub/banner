@@ -22,7 +22,7 @@ class FoodView extends StatelessWidget {
                 children: [
                   Center(
                     child: Container(
-                      width: MediaQuery.of(context).size.width - 65,
+                      width: MediaQuery.of(context).size.width - 60,
                       height: 456,
                       decoration: BoxDecoration(
                         color: const Color(0xffc2c4d8),
@@ -147,25 +147,26 @@ class FoodView extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 70,
+                    top: 65,
                     child: SvgPicture.asset(
                       'assets/images/leaf.svg',
                     ),
                   ),
                   Positioned(
-                    right: 28,
+                    right: 15,
                     top: 135,
                     child: SvgPicture.asset(
                       'assets/images/OBJECTS_1.svg',
                     ),
                   ),
                   // Container//////////////////////////
+
                   Positioned(
-                    top: 130,
-                    left: 34,
-                    right: 34,
+                    top: 125,
+                    left: 30,
+                    right: 22,
                     child: Opacity(
-                      opacity: 0.8,
+                      opacity: 0.9,
                       child: Container(
                         height: 50,
                         width: MediaQuery.of(context).size.width,
@@ -174,32 +175,35 @@ class FoodView extends StatelessWidget {
                           border: Border.all(),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Row(
-                              children: [
-                                PlusIcons(onTap: () {}),
-                                const SizedBox(width: 8),
-                                const Text(
-                                  'New',
-                                  style: TextStyle(
-                                    color: AppColors.blue,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w500,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  PlusIcons(onTap: () {}),
+                                  const SizedBox(width: 132),
+                                  const Text(
+                                    'New',
+                                    style: TextStyle(
+                                      color: AppColors.blue,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            const Text(
-                              '28.06.23',
-                              style: TextStyle(
-                                color: AppColors.blue,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w500,
+                                ],
                               ),
-                            ),
-                          ],
+                              const Text(
+                                '28.06.23',
+                                style: TextStyle(
+                                  color: AppColors.blue,
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

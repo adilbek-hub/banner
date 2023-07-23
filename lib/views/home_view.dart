@@ -23,9 +23,13 @@ class _HomeViewState extends State<HomeView> {
             Expanded(
               child: Stack(
                 children: [
-                  SvgPicture.asset(
-                    'assets/images/menuClipPathImage.svg',
+                  SizedBox(
                     width: MediaQuery.of(context).size.width,
+                    height: 344,
+                    child: SvgPicture.asset(
+                      'assets/images/menuClipPathImage.svg',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Positioned(
                     top: 15,
