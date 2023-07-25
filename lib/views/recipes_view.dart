@@ -10,6 +10,14 @@ class RecipesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> icons = [
+      'assets/images/plus.svg',
+      'assets/images/plus.svg',
+      'assets/images/plus.svg',
+      'assets/images/plus.svg',
+      'assets/images/plus.svg',
+      'assets/images/plus.svg',
+    ];
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -40,7 +48,7 @@ class RecipesView extends StatelessWidget {
                       width: MediaQuery.of(context).size.width - 65,
                       height: MediaQuery.of(context).size.height - 440,
                       decoration: BoxDecoration(
-                        color: const Color(0xffc2c4d8).withOpacity(0.9),
+                        color: const Color(0xffa49fae).withOpacity(0.9),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
@@ -86,6 +94,35 @@ class RecipesView extends StatelessWidget {
                               ],
                             ),
                           ),
+                          Expanded(
+                            child: ListView.builder(
+                                itemCount: icons.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  final icon = icons[index];
+                                  return Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 8,
+                                      right: 8,
+                                    ),
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        border: Border(
+                                          bottom: BorderSide(
+                                            width: 1,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      child: SizedBox(
+                                        height: 40,
+                                        child: ListTile(
+                                          leading: SvgPicture.asset(icon),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }),
+                          )
                         ],
                       ),
                     ),
@@ -138,7 +175,10 @@ class RecipesView extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                PlusIcons(onTap: () {}),
+                                PlusIcons(onTap: () {
+                                  Navigator.pushNamed(
+                                      context, 'recipes_classicOmelet');
+                                }),
                                 const SizedBox(width: 8),
                                 const Text(
                                   'New',
