@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../components/plus_icons.dart';
 import '../constants/app_colors.dart';
 
 class RecipesClassicOmelet extends StatelessWidget {
@@ -23,18 +21,18 @@ class RecipesClassicOmelet extends StatelessWidget {
                 Center(
                   child: Container(
                     width: MediaQuery.of(context).size.width - 65,
-                    height: MediaQuery.of(context).size.height - 440,
+                    height: MediaQuery.of(context).size.height - 445,
                     decoration: BoxDecoration(
-                      color: const Color(0xffa49fae).withOpacity(0.9),
+                      color: const Color(0xffc2c4d8).withOpacity(0.9),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Column(
                       children: [
                         const SizedBox(height: 10),
                         Text(
-                          'Recipe name'.toUpperCase(),
+                          'classic omelet'.toUpperCase(),
                           style: const TextStyle(
-                            color: Color(0xff344b93),
+                            color: Color(0xff374b93),
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                           ),
@@ -103,6 +101,50 @@ class RecipesClassicOmelet extends StatelessWidget {
                     ),
                   ),
                 ),
+                Positioned(
+                  bottom: 0,
+                  left: 33,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width - 65,
+                      height: MediaQuery.of(context).size.height - 560,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0xff374B93)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 5,
+                              left: 10,
+                            ),
+                            child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'Directions',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 5, left: 10),
+                            child: Text(
+                              'Stir up eggs in a bowl pouring milk into it little by little. You should just blend the yolk and the white, not froth it up. Add some salt.Pour some vegetable oil on a frying pan and accurately turn the pan so that the oil will spread all over the surface. Make it hot and pour the egg-and-milk blend. Spread it evenly over the pan.Fry the omelet for 2 minutes at each side. Serve hot.',
+                              style: TextStyle(
+                                color: Color(0xff374b93),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )),
+                ),
                 SvgPicture.asset(
                   'assets/images/Recipes_clip_path.svg',
                   width: MediaQuery.of(context).size.width,
@@ -128,53 +170,6 @@ class RecipesClassicOmelet extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 155,
-                  left: 34,
-                  right: 34,
-                  child: Opacity(
-                    opacity: 0.8,
-                    child: Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: const Color(0xfffdfdfd),
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            children: [
-                              PlusIcons(onTap: () {
-                                Navigator.pushNamed(
-                                    context, 'recipes_classicOmelet');
-                              }),
-                              const SizedBox(width: 8),
-                              const Text(
-                                'New',
-                                style: TextStyle(
-                                  color: AppColors.blue,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const Text(
-                            '28.06.23',
-                            style: TextStyle(
-                              color: AppColors.blue,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
                   top: 92,
                   left: 80,
                   child: SvgPicture.asset(
@@ -195,47 +190,29 @@ class RecipesClassicOmelet extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.9,
                     child: SvgPicture.asset(
-                      'assets/images/book.svg',
+                      'assets/images/pot.svg',
                     ),
                   ),
                 ),
                 Positioned(
-                  bottom: 0,
-                  left: 33,
-                  child: Container(
-                      width: MediaQuery.of(context).size.width - 65,
-                      height: MediaQuery.of(context).size.height - 580,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: const Color(0xff374B93)),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 20),
-                            child: Text(
-                              'Directions',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10, left: 10),
-                            child: Text(
-                              'Stir up eggs in a bowl pouring milk into it little by little. You should just blend the yolk and the white, not froth it up. Add some salt.Pour some vegetable oil on a frying pan and accurately turn the pan so that the oil will spread all over the surface. Make it hot and pour the egg-and-milk blend. Spread it evenly over the pan.Fry the omelet for 2 minutes at each side. Serve hot.',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )),
+                  left: 40,
+                  top: 165,
+                  child: Opacity(
+                    opacity: 0.9,
+                    child: SvgPicture.asset(
+                      'assets/images/BackTo.svg',
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 40,
+                  top: 140,
+                  child: Opacity(
+                    opacity: 0.9,
+                    child: SvgPicture.asset(
+                      'assets/images/Pear.svg',
+                    ),
+                  ),
                 ),
               ],
             ),

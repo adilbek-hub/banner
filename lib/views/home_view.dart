@@ -74,11 +74,11 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 210),
+                    padding: const EdgeInsets.only(top: 200),
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 20),
+                          padding: const EdgeInsets.only(left: 35),
                           child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, 'foodView');
@@ -89,7 +89,7 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 20, top: 10),
+                          padding: const EdgeInsets.only(left: 35, top: 10),
                           child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, 'recipesView');
@@ -100,31 +100,31 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsets.only(left: 50, top: 10),
+                          padding: EdgeInsets.only(left: 100, top: 10),
                           child: PlusIconsText(
                             text: AppTexts.water,
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsets.only(left: 120, top: 10),
+                          padding: EdgeInsets.only(left: 160, top: 10),
                           child: PlusIconsText(
                             text: AppTexts.sport,
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsets.only(left: 145, top: 10),
+                          padding: EdgeInsets.only(left: 185, top: 10),
                           child: PlusIconsText(
                             text: AppTexts.calendar,
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsets.only(left: 165, top: 10),
+                          padding: EdgeInsets.only(left: 180, top: 10),
                           child: PlusIconsText(
                             text: AppTexts.freeTime,
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsets.only(left: 155, top: 10),
+                          padding: EdgeInsets.only(left: 175, top: 10),
                           child: PlusIconsText(
                             text: AppTexts.freeTime,
                           ),
