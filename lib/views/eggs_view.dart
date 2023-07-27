@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foods/constants/app_colors.dart';
-import '../components/emoji_components/emoji_container.dart';
 
 class EggsView extends StatelessWidget {
   const EggsView({super.key});

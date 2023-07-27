@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/app_colors.dart';
+import '../models/classic_omelet.dart';
 
 class RecipesClassicOmelet extends StatelessWidget {
   const RecipesClassicOmelet({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<KlassicOmelet> klassicOmeletList = klassicOmelet;
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -29,12 +31,19 @@ class RecipesClassicOmelet extends StatelessWidget {
                     child: Column(
                       children: [
                         const SizedBox(height: 10),
-                        Text(
-                          'classic omelet'.toUpperCase(),
-                          style: const TextStyle(
-                            color: Color(0xff374b93),
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
+                        InkWell(
+                          onTap: () {
+                            print('tap');
+                            Navigator.pushNamed(
+                                context, 'recipes_classicOmelet2');
+                          },
+                          child: Text(
+                            'classic omelet'.toUpperCase(),
+                            style: const TextStyle(
+                              color: Color(0xff374b93),
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                         Container(
@@ -71,8 +80,9 @@ class RecipesClassicOmelet extends StatelessWidget {
                         ),
                         Expanded(
                           child: ListView.builder(
-                              itemCount: 5,
+                              itemCount: klassicOmeletList.length,
                               itemBuilder: (BuildContext context, int index) {
+                                final klassicOmelet = klassicOmeletList[index];
                                 return Padding(
                                   padding: const EdgeInsets.only(
                                     left: 8,
@@ -87,10 +97,33 @@ class RecipesClassicOmelet extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    child: SizedBox(
-                                      height: 40,
-                                      child: ListTile(
-                                        leading: Text(index.toString()),
+                                    //Список Ингредиентов и количеств от ооп(модел)
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 45,
+                                        vertical: 8,
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            klassicOmelet.ingredients,
+                                            style: const TextStyle(
+                                              color: AppColors.blue,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            klassicOmelet.quantity,
+                                            style: const TextStyle(
+                                              color: AppColors.blue,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
