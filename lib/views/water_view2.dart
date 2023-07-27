@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foods/constants/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WaterView extends StatelessWidget {
-  const WaterView({super.key});
+class WaterView2 extends StatelessWidget {
+  const WaterView2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -172,6 +172,7 @@ class WaterView extends StatelessWidget {
                   'assets/images/Glass.png',
                   width: 65,
                 )),
+
             Positioned(
                 bottom: 190,
                 right: 100,
@@ -183,6 +184,33 @@ class WaterView extends StatelessWidget {
                       fontWeight: FontWeight.w900,
                       color: const Color(0xff9be75f)),
                 )),
+            Positioned(
+                bottom: 138,
+                right: 45,
+                child: Text(
+                  "I can't even drink two glasses of water a\n day. Is that bad for you?"
+                      .toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.lato(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w900,
+                    color: AppColors.blue,
+                  ),
+                )),
+            Positioned(
+                bottom: 69,
+                right: 70,
+                child: Text(
+                  "No, so you get your fluids from\n other sources. But, remember, pure\n water is always preferable."
+                      .toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.lato(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w900,
+                    color: AppColors.blue,
+                  ),
+                )),
+
             //Стаканы на правом крае
             Positioned(
                 bottom: 195,
@@ -194,14 +222,14 @@ class WaterView extends StatelessWidget {
                 bottom: 20,
                 right: 40,
                 child: SvgPicture.asset(
-                  'assets/images/bottle_of_milk.svg',
+                  'assets/images/bottl_of_milk2.svg',
                   width: 65,
                 )),
             Positioned(
                 bottom: 10,
                 right: 90,
                 child: SvgPicture.asset(
-                  'assets/images/small_glass_of_milk.svg',
+                  'assets/images/glass_of_milk2.svg',
                   width: 65,
                 )),
             // Path / Иконка home setting + milk картинка
@@ -241,7 +269,7 @@ class WaterView extends StatelessWidget {
               right: 34,
               child: InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, 'water_view2');
+                  Navigator.pushNamed(context, 'water_view3');
                 },
                 child: SvgPicture.asset(
                   'assets/images/milk.svg',

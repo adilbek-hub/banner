@@ -3,10 +3,12 @@ import 'package:foods/models/time_foods.dart';
 import 'package:foods/views/food_view.dart';
 import 'package:foods/views/home_view.dart';
 import 'package:foods/views/recipes_view.dart';
+import 'package:foods/views/water_view3.dart';
 
 import '../views/recipes_classic_omelet_view.dart';
 import '../views/recipes_classic_omelet_view2.dart';
 import '../views/water_view.dart';
+import '../views/water_view2.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         'recipes_classicOmelet': (context) => const RecipesClassicOmelet(),
         'recipes_classicOmelet2': (context) => const RecipesClassicOmelet2(),
         'water_view': (context) => const WaterView(),
+        'water_view2': (context) => const WaterView2(),
+        'water_view3': (context) => const WaterView3(),
       },
     );
   }
