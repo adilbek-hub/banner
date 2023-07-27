@@ -6,6 +6,7 @@ import 'package:foods/views/recipes_view.dart';
 
 import '../views/recipes_classic_omelet_view.dart';
 import '../views/recipes_classic_omelet_view2.dart';
+import '../views/water_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         'recipesView': (context) => const RecipesView(),
         'recipes_classicOmelet': (context) => const RecipesClassicOmelet(),
         'recipes_classicOmelet2': (context) => const RecipesClassicOmelet2(),
+        'water_view': (context) => const WaterView(),
       },
     );
   }

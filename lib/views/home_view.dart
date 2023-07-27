@@ -99,10 +99,15 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 100, top: 10),
-                          child: PlusIconsText(
-                            text: AppTexts.water,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 100, top: 10),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, 'water_view');
+                            },
+                            child: const PlusIconsText(
+                              text: AppTexts.water,
+                            ),
                           ),
                         ),
                         const Padding(

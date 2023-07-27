@@ -133,7 +133,9 @@ class RecipesClassicOmelet2 extends StatelessWidget {
                 top: 15,
                 left: 15,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/');
+                  },
                   child: SvgPicture.asset(
                     'assets/images/home.svg',
                   ),

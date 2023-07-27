@@ -9,6 +9,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.7
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -23,9 +24,9 @@ flutter:
     - assets/foods/
  
   # fonts:
-  #   - family: Schyler
+  #   - family: Laila-Regular
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Laila-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
