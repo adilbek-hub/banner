@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:foods/components/eggs_components/emoji_container.dart';
 import 'package:foods/models/time_foods.dart';
 import 'package:foods/views/eggs_view.dart';
 
@@ -15,6 +14,7 @@ class EmojiView extends StatelessWidget {
             Expanded(
               child: Stack(
                 children: [
+                  // первый слой контейнера
                   Transform.translate(
                     offset: const Offset(0.0, 80),
                     child: Center(
@@ -28,43 +28,44 @@ class EmojiView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  // Нижний левый картинка
                   Positioned(
                       bottom: 0,
                       left: 0,
                       child: SvgPicture.asset('assets/images/Group5.svg')),
+                  //Нижний правый картинка
                   Positioned(
                       bottom: -20,
                       right: 70,
                       child: SvgPicture.asset('assets/images/Plug.svg')),
-                  /////////////// second container
+                  // Второй слой контейнера
                   Transform.translate(
-                    offset: const Offset(0.0, 80),
+                    offset: const Offset(0.0, 120),
                     child: Center(
                       child: Container(
                         width: MediaQuery.of(context).size.width - 65,
-                        height: 700,
+                        height: 670,
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Column(
                           children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 15, left: 20),
-                                  child: SvgPicture.asset(
-                                    'assets/images/BackTo.svg',
-                                  ),
-                                ),
+                            Positioned(
+                              bottom: 0,
+                              child: Container(
+                                height: 50,
+                                width: 100,
+                                color: Colors.red,
+                                // child: InkWell(
+                                //   onTap: () {
+                                //     print('object');
+                                //   },
+                                //   child: SvgPicture.asset(
+                                //       'assets/images/backIcon.svg'),
+                                // ),
                               ),
                             ),
-                            const EmojiContainer(),
                             Expanded(
                                 child: GridView.builder(
                                     gridDelegate:

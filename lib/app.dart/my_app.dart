@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const HomeView(),
-        'foodView': (context) => FoodView(
+        'food_view': (context) => FoodView(
               timeFoodsList: timeFoodsList,
             ),
         'recipesView': (context) => const RecipesView(),

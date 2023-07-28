@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/app_colors.dart';
-import '../models/classic_omelet.dart';
 
 class RecipesClassicOmelet2 extends StatelessWidget {
   const RecipesClassicOmelet2({super.key});

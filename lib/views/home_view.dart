@@ -4,6 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foods/components/plus_icons_text.dart';
 
 import 'package:foods/constants/app_texts.dart';
+import 'package:foods/views/food_view.dart';
+
+import '../models/time_foods.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -81,7 +84,12 @@ class _HomeViewState extends State<HomeView> {
                           padding: const EdgeInsets.only(left: 35),
                           child: InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, 'foodView');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        FoodView(timeFoodsList: timeFoodsList),
+                                  ));
                             },
                             child: const PlusIconsText(
                               text: AppTexts.food,
