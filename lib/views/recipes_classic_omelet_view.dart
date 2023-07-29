@@ -173,6 +173,7 @@ class RecipesClassicOmelet extends StatelessWidget {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
+                              textScaleFactor: 0,
                             ),
                           ),
                         ],
@@ -232,8 +233,13 @@ class RecipesClassicOmelet extends StatelessWidget {
                   top: 165,
                   child: Opacity(
                     opacity: 0.9,
-                    child: SvgPicture.asset(
-                      'assets/images/BackTo.svg',
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('recipesView');
+                      },
+                      child: SvgPicture.asset(
+                        'assets/images/backIcon.svg',
+                      ),
                     ),
                   ),
                 ),

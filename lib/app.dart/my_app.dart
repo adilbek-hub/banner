@@ -5,6 +5,7 @@ import 'package:foods/views/home_view.dart';
 import 'package:foods/views/recipes_view.dart';
 import 'package:foods/views/water_view3.dart';
 
+import '../views/emoji_view.dart';
 import '../views/recipes_classic_omelet_view.dart';
 import '../views/recipes_classic_omelet_view2.dart';
 import '../views/water_view.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         'food_view': (context) => FoodView(
               timeFoodsList: timeFoodsList,
             ),
+        'emoji_view': (context) => const EmojiView(),
         'recipesView': (context) => const RecipesView(),
         'recipes_classicOmelet': (context) => const RecipesClassicOmelet(),
         'recipes_classicOmelet2': (context) => const RecipesClassicOmelet2(),

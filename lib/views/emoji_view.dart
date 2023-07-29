@@ -3,6 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foods/models/time_foods.dart';
 import 'package:foods/views/eggs_view.dart';
 
+import '../constants/app_text_styles.dart';
+import '../constants/app_texts.dart';
+
 class EmojiView extends StatelessWidget {
   const EmojiView({super.key});
   @override
@@ -51,19 +54,47 @@ class EmojiView extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            Positioned(
-                              bottom: 0,
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 70),
                               child: Container(
-                                height: 50,
-                                width: 100,
-                                color: Colors.red,
-                                // child: InkWell(
-                                //   onTap: () {
-                                //     print('object');
-                                //   },
-                                //   child: SvgPicture.asset(
-                                //       'assets/images/backIcon.svg'),
-                                // ),
+                                width: MediaQuery.of(context).size.width,
+                                height: 37,
+                                decoration: const BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xff67bbc9),
+                                      Color(0xffd3dfde)
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  ),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        InkWell(
+                                          onTap: () {
+                                            Navigator.of(context)
+                                                .pushNamed('food_view');
+                                          },
+                                          child: SvgPicture.asset(
+                                              'assets/images/backIcon.svg'),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 100),
+                                          child: Text(
+                                            AppTexts.emoji,
+                                            style: AppTextStyles.textStyle2,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             Expanded(

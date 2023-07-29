@@ -16,6 +16,7 @@ class RecipesView extends StatelessWidget {
       'assets/images/plus.svg',
       'assets/images/plus.svg',
     ];
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -113,8 +114,15 @@ class RecipesView extends StatelessWidget {
                                       ),
                                       child: SizedBox(
                                         height: 40,
-                                        child: ListTile(
-                                          leading: SvgPicture.asset(icon),
+                                        child: InkWell(
+                                          onTap: () {
+                                            Navigator.of(context).pushNamed(
+                                                'recipes_classicOmelet');
+                                            print('object');
+                                          },
+                                          child: ListTile(
+                                            leading: SvgPicture.asset(icon),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -146,7 +154,9 @@ class RecipesView extends StatelessWidget {
                     top: 15,
                     left: 15,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/');
+                      },
                       child: SvgPicture.asset(
                         'assets/images/home.svg',
                       ),

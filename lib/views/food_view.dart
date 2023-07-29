@@ -28,7 +28,8 @@ class FoodView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding:
+                          const EdgeInsets.only(left: 20, top: 70, bottom: 5),
                       child: InkWell(
                           onTap: () {
                             Navigator.of(context).pushNamed('/');
@@ -47,22 +48,27 @@ class FoodView extends StatelessWidget {
                           end: Alignment.centerRight,
                         ),
                       ),
-                      child: const Column(
+                      child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text(
+                              const Text(
                                 AppTexts.time,
                                 style: AppTextStyles.textStyle2,
                               ),
-                              Text(
+                              const Text(
                                 AppTexts.dishName,
                                 style: AppTextStyles.textStyle2,
                               ),
-                              Text(
-                                AppTexts.emoji,
-                                style: AppTextStyles.textStyle2,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed('emoji_view');
+                                },
+                                child: Text(
+                                  AppTexts.emoji,
+                                  style: AppTextStyles.textStyle2,
+                                ),
                               ),
                             ],
                           ),
@@ -72,11 +78,49 @@ class FoodView extends StatelessWidget {
                     Expanded(
                       child: ListView(
                         children: [
-                          ListTile(
-                            minLeadingWidth: 10,
-                            leading: Text('${timeFoodsList[0].time}'),
-                            title: Text('${timeFoodsList[0].time}'),
-                          )
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('${timeFoodsList[0].time}'),
+                                Text('${timeFoodsList[0].nameFood}'),
+                                SvgPicture.asset(
+                                    'assets/images/${timeFoodsList[0].foodImage}.svg'),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('${timeFoodsList[1].time}'),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('${timeFoodsList[2].time}'),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('${timeFoodsList[3].time}'),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     )

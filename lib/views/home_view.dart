@@ -8,14 +8,9 @@ import 'package:foods/views/food_view.dart';
 
 import '../models/time_foods.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,9 +21,8 @@ class _HomeViewState extends State<HomeView> {
             Expanded(
               child: Stack(
                 children: [
-                  SizedBox(
+                  Positioned(
                     width: MediaQuery.of(context).size.width,
-                    height: 344,
                     child: SvgPicture.asset(
                       'assets/images/menuClipPathImage.svg',
                       fit: BoxFit.cover,
@@ -146,25 +140,26 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ),
                   Positioned(
-                    bottom: 150,
+                    left: -30,
+                    bottom: 80,
                     child: SvgPicture.asset(
                       'assets/images/GIRL.svg',
                     ),
                   ),
                   Positioned(
-                    bottom: 150,
+                    bottom: 100,
                     child: SvgPicture.asset(
                       'assets/images/Group.svg',
                     ),
                   ),
                   Positioned(
-                    bottom: 0,
+                    bottom: -60,
                     child: SvgPicture.asset(
                       'assets/images/Group5.svg',
                     ),
                   ),
                   Positioned(
-                    bottom: 30,
+                    bottom: 0,
                     right: 0,
                     child: SvgPicture.asset(
                       'assets/images/Group80.svg',

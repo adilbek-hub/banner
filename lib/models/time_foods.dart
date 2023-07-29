@@ -12,7 +12,7 @@ class TimeFoods {
 const firstFood = TimeFoods(
     time: '09:00', nameFood: 'eggs with began', foodImage: 'FryingPan');
 
-const secondFood = TimeFoods(time: '12:00');
+const secondFood = TimeFoods(time: '12:00', nameFood: '', foodImage: '');
 
 const thirdFood = TimeFoods(time: '16:00');
 
