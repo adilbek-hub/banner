@@ -4,6 +4,7 @@ import 'package:foods/views/food_view.dart';
 import 'package:foods/views/home_view.dart';
 import 'package:foods/views/recipes_view.dart';
 import 'package:foods/views/water_view3.dart';
+import 'package:foods/views/water_view4.dart';
 
 import '../views/emoji_view.dart';
 import '../views/recipes_classic_omelet_view.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         'water_view': (context) => const WaterView(),
         'water_view2': (context) => const WaterView2(),
         'water_view3': (context) => const WaterView3(),
+        'water_view4': (context) => const WaterView4(),
       },
     );
   }

@@ -193,7 +193,9 @@ class WaterView3 extends StatelessWidget {
                     bottom: 0,
                     right: 170,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed('water_view4');
+                      },
                       child: SvgPicture.asset(
                         'assets/images/small_glass_of_milk.svg',
                       ),
