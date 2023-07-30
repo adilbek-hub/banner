@@ -7,12 +7,13 @@ import 'package:foods/models/sport.dart';
 import '../constants/app_text_styles.dart';
 import '../constants/app_texts.dart';
 
-class SportView extends StatelessWidget {
-  const SportView({super.key, required this.oneTwoList});
-  final List<SportModel> oneTwoList;
+class SportView2 extends StatelessWidget {
+  const SportView2({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    List<SportModel> oneTwoLists = oneTwoList;
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff374b93),
@@ -71,43 +72,48 @@ class SportView extends StatelessWidget {
               right: 34,
               child: Opacity(
                 opacity: 0.8,
-                child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: const Color(0xfffdfdfd),
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Row(
-                        children: [
-                          PlusIcons(onTap: () {
-                            Navigator.pushNamed(
-                                context, 'recipes_classicOmelet');
-                          }),
-                          const SizedBox(width: 8),
-                          const Text(
-                            'New',
-                            style: TextStyle(
-                              color: AppColors.blue,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('sport_view3');
+                  },
+                  child: Container(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: const Color(0xfffdfdfd),
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          children: [
+                            PlusIcons(onTap: () {
+                              Navigator.pushNamed(
+                                  context, 'recipes_classicOmelet');
+                            }),
+                            const SizedBox(width: 8),
+                            const Text(
+                              'New',
+                              style: TextStyle(
+                                color: AppColors.blue,
+                                fontSize: 22,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      const Text(
-                        '28.06.23',
-                        style: TextStyle(
-                          color: AppColors.blue,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
+                          ],
                         ),
-                      ),
-                    ],
+                        const Text(
+                          '28.06.23',
+                          style: TextStyle(
+                            color: AppColors.blue,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -144,50 +150,6 @@ class SportView extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 10,
-                top: 250,
-                right: 10,
-              ),
-              child: ListView.builder(
-                  itemCount: oneTwoList.length,
-                  itemBuilder: (context, index) {
-                    final oneTwo = oneTwoLists[index];
-                    return Container(
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              width: 0.5,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 55, vertical: 8),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context)
-                                      .pushNamed('sport_view2');
-                                },
-                                child: SvgPicture.asset(
-                                    'assets/images/${oneTwo.image}.svg'),
-                              ),
-                              const SizedBox(width: 10),
-                              Text(
-                                oneTwo.name,
-                                style: const TextStyle(
-                                    color: Colors.white, fontSize: 18),
-                              ),
-                            ],
-                          ),
-                        ));
-                  }),
             ),
             Positioned(
               bottom: 240,
@@ -250,6 +212,49 @@ class SportView extends StatelessWidget {
               child: SvgPicture.asset(
                 'assets/images/sport_boy.svg',
                 width: 200,
+              ),
+            ),
+            Positioned(
+              top: 250,
+              child: Container(
+                color: const Color(0xff374b93).withOpacity(0.6),
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 10,
+              child: SvgPicture.asset(
+                'assets/images/dubelles.svg',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 240, left: 30),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2, childAspectRatio: 7.6),
+                      itemCount: sportModel2.length,
+                      itemBuilder: (context, index) {
+                        final sports = sportModel2[index];
+                        return ListTile(
+                          contentPadding:
+                              const EdgeInsets.only(left: 20, top: 5),
+                          leading: SvgPicture.asset(
+                              'assets/images/${sports.image}.svg'),
+                          title: Text(
+                            sports.name,
+                            style: AppTextStyles.textStyle3,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

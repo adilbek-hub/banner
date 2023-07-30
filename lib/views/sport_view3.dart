@@ -7,12 +7,14 @@ import 'package:foods/models/sport.dart';
 import '../constants/app_text_styles.dart';
 import '../constants/app_texts.dart';
 
-class SportView extends StatelessWidget {
-  const SportView({super.key, required this.oneTwoList});
-  final List<SportModel> oneTwoList;
+class SportView3 extends StatelessWidget {
+  const SportView3({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    List<SportModel> oneTwoLists = oneTwoList;
+    // List<SportModel2> sport = sportModel2;
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff374b93),
@@ -79,17 +81,14 @@ class SportView extends StatelessWidget {
                     border: Border.all(),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Row(
                         children: [
-                          PlusIcons(onTap: () {
-                            Navigator.pushNamed(
-                                context, 'recipes_classicOmelet');
-                          }),
-                          const SizedBox(width: 8),
-                          const Text(
+                          PlusIcons(),
+                          SizedBox(width: 8),
+                          Text(
                             'New',
                             style: TextStyle(
                               color: AppColors.blue,
@@ -99,7 +98,7 @@ class SportView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Text(
+                      Text(
                         '28.06.23',
                         style: TextStyle(
                           color: AppColors.blue,
@@ -144,50 +143,6 @@ class SportView extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 10,
-                top: 250,
-                right: 10,
-              ),
-              child: ListView.builder(
-                  itemCount: oneTwoList.length,
-                  itemBuilder: (context, index) {
-                    final oneTwo = oneTwoLists[index];
-                    return Container(
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              width: 0.5,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 55, vertical: 8),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context)
-                                      .pushNamed('sport_view2');
-                                },
-                                child: SvgPicture.asset(
-                                    'assets/images/${oneTwo.image}.svg'),
-                              ),
-                              const SizedBox(width: 10),
-                              Text(
-                                oneTwo.name,
-                                style: const TextStyle(
-                                    color: Colors.white, fontSize: 18),
-                              ),
-                            ],
-                          ),
-                        ));
-                  }),
             ),
             Positioned(
               bottom: 240,
@@ -250,6 +205,58 @@ class SportView extends StatelessWidget {
               child: SvgPicture.asset(
                 'assets/images/sport_boy.svg',
                 width: 200,
+              ),
+            ),
+            Positioned(
+              top: 250,
+              child: Container(
+                color: const Color(0xff374b93).withOpacity(0.6),
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 10,
+              child: SvgPicture.asset(
+                'assets/images/dubelles.svg',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 20, top: 250, right: 20, bottom: 65),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xff7b88b8).withOpacity(0.6),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ListView.builder(
+                          itemCount: sportModel3.length,
+                          itemBuilder: (context, index) {
+                            final sport3 = sportModel3[index];
+                            return Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.white,
+                                    width: 0.5,
+                                  ),
+                                ),
+                              ),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                      'assets/images/${sport3.image}.svg')
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

@@ -55,7 +55,7 @@ class EmojiView extends StatelessWidget {
                         child: Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 70),
+                              padding: const EdgeInsets.symmetric(vertical: 60),
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: 37,
