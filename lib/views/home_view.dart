@@ -112,9 +112,11 @@ class HomeView extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 160, top: 10),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 160, top: 10),
                           child: PlusIconsText(
+                            onTap: () =>
+                                Navigator.of(context).pushNamed('sport_view'),
                             text: AppTexts.sport,
                           ),
                         ),

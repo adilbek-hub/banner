@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foods/models/sport.dart';
 import 'package:foods/models/time_foods.dart';
 import 'package:foods/views/food_view.dart';
 import 'package:foods/views/home_view.dart';
 import 'package:foods/views/recipes_view.dart';
+import 'package:foods/views/sport_view.dart';
 import 'package:foods/views/water_view3.dart';
 import 'package:foods/views/water_view4.dart';
 
@@ -37,6 +39,9 @@ class MyApp extends StatelessWidget {
         'water_view2': (context) => const WaterView2(),
         'water_view3': (context) => const WaterView3(),
         'water_view4': (context) => const WaterView4(),
+        'sport_view': (context) => SportView(
+              oneTwoList: oneTwoList,
+            ),
       },
     );
   }

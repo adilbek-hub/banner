@@ -204,7 +204,7 @@ class WaterView extends StatelessWidget {
                   'assets/images/small_glass_of_milk.svg',
                   width: 65,
                 )),
-            // Path / Иконка home setting + milk картинка
+
             Positioned(
               top: 0,
               child: SvgPicture.asset(
