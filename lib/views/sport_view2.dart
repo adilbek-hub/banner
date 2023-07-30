@@ -67,7 +67,7 @@ class SportView2 extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 135,
+              top: 130,
               left: 34,
               right: 34,
               child: Opacity(
@@ -119,7 +119,7 @@ class SportView2 extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 200,
+              top: 190,
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 40,
@@ -147,6 +147,45 @@ class SportView2 extends StatelessWidget {
                       AppTexts.time,
                       style: AppTextStyles.textStyle2,
                     ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: 238,
+              left: 60,
+              child: Row(
+                children: [
+                  SvgPicture.asset('assets/images/plus.svg'),
+                  const SizedBox(width: 18),
+                  const Text(
+                    'exercise',
+                    style: AppTextStyles.textStyle3,
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              top: 265,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 40,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xff67bbc9), Color(0xffd3dfde)],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SvgPicture.asset('assets/images/backIcon.svg'),
+                    Text(
+                      AppTexts.exercise,
+                      style: AppTextStyles.textStyle2,
+                    ),
+                    SvgPicture.asset('assets/images/dumbbell.svg')
                   ],
                 ),
               ),
@@ -215,7 +254,7 @@ class SportView2 extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 250,
+              top: 320,
               child: Container(
                 color: const Color(0xff374b93).withOpacity(0.6),
                 height: MediaQuery.of(context).size.height,
@@ -230,7 +269,7 @@ class SportView2 extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 240, left: 30),
+              padding: const EdgeInsets.only(top: 290, left: 30),
               child: Column(
                 children: [
                   Expanded(

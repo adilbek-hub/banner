@@ -14,7 +14,6 @@ class SportView3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // List<SportModel2> sport = sportModel2;
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff374b93),
@@ -126,20 +125,12 @@ class SportView3 extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Row(
-                      children: [
-                        SvgPicture.asset('assets/images/plus.svg'),
-                        const SizedBox(width: 10),
-                        const Text(
-                          AppTexts.yourExercise,
-                          style: AppTextStyles.textStyle2,
-                        ),
-                      ],
-                    ),
-                    const Text(
-                      AppTexts.time,
+                    SvgPicture.asset('assets/images/backIcon.svg'),
+                    Text(
+                      AppTexts.exercise,
                       style: AppTextStyles.textStyle2,
                     ),
+                    SvgPicture.asset('assets/images/dumbbell.svg')
                   ],
                 ),
               ),
@@ -233,27 +224,64 @@ class SportView3 extends StatelessWidget {
                         color: const Color(0xff7b88b8).withOpacity(0.6),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: ListView.builder(
-                          itemCount: sportModel3.length,
-                          itemBuilder: (context, index) {
-                            final sport3 = sportModel3[index];
-                            return Container(
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Colors.white,
-                                    width: 0.5,
-                                  ),
-                                ),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: ListView.builder(
+                                itemCount: sportModel3.length,
+                                itemBuilder: (context, index) {
+                                  final sport3 = sportModel3[index];
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          bottom: BorderSide(
+                                            color: Colors.white,
+                                            width: 0.5,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          SvgPicture.asset(
+                                              'assets/images/${sport3.image}.svg'),
+                                          Text(
+                                            sport3.name,
+                                            style: AppTextStyles.textStyle3,
+                                          ),
+                                          Text(
+                                            sport3.minute,
+                                            style: AppTextStyles.textStyle3,
+                                          ),
+                                          Text(
+                                            sport3.date,
+                                            style: AppTextStyles.textStyle2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                }),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 25,
+                              bottom: 265,
+                            ),
+                            child: Row(children: [
+                              SvgPicture.asset('assets/images/plus.svg'),
+                              const SizedBox(width: 5),
+                              const Text(
+                                'new',
+                                style: AppTextStyles.textStyle3,
                               ),
-                              child: Row(
-                                children: [
-                                  SvgPicture.asset(
-                                      'assets/images/${sport3.image}.svg')
-                                ],
-                              ),
-                            );
-                          }),
+                            ]),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
